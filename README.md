@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chat Task Manager - Frontend
 
-## Getting Started
+**Chat Task Manager**, um sistema que organiza tarefas recebidas via chat e aplica inteligência artificial para gerar resumos, priorizar tarefas e facilitar a busca semântica.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Layout
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Layout do Chat Task Manager](images/image.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologias Utilizadas
 
-## Learn More
+- **React** + **TypeScript**
+- **Next.js** para SSR/SSG
+- **Material UI** / **Bootstrap** para UI
+- **Axios / Fetch** para chamadas à API
+- **React Query** (opcional) para cache e estado de dados
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Funcionalidades
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Autenticação e controle de acesso
+- Lista de tarefas com filtros, busca e paginação
+- Exibição de prioridade e justificativa gerada pela IA
+- Interação com backend via APIs REST
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## URLs Importantes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Backend API:** `https://api.nimblefast.com.br`
+- **Documentação Swagger Backend:** `https://api.nimblefast.com.br/docs`
+- **Coverage do backend:** `https://api.nimblefast.com.br/coverage`
+- **Deploy Frontend (GitHub Actions):** `https://github.com/rodrigobarbosa12/frontend.chat-tasker.com.br/actions`
+
+---
+
+## Como Rodar Localmente
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/rodrigobarbosa12/chat-tasker.com.br.git
+   cd chat-tasker.com.br
+   ```
+
+2. Inicie o container:
+
+   ```bash
+   docker compose up -d
+   ```
