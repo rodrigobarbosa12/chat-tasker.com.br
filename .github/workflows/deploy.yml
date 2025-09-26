@@ -33,5 +33,6 @@ jobs:
 
             # Executa Docker Compose passando variáveis do GitHub
             NEXT_PUBLIC_URL_API=${{ vars.NEXT_PUBLIC_URL_API }} \
+
             docker-compose up -d
           EOF
