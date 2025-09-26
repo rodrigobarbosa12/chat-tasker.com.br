@@ -1,0 +1,37 @@
+name: Deploy FRONTEND to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: VPS # Nome do environment do repositório
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar acesso SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_KEY }} # Assim que acessa a secret { secrets.M_NHA_VAR }
+
+      - name: Deploy na VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no root@145.223.26.174 << 'EOF'
+            cd /var/www/sites/chat-tasker.com.br || exit 1
+
+            # Atualiza repositório
+            git checkout main
+            git pull
+
+            # Para o container atual
+            docker compose down
+
+            # Executa Docker Compose passando variáveis do GitHub
+            NEXT_PUBLIC_URL_API=${{ vars.NEXT_PUBLIC_URL_API }} \
+            docker-compose up -d
+          EOF

@@ -1,0 +1,11 @@
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-manager
+    ports:
+      - "4008:4008"
+
+    environment:
+      - NEXT_PUBLIC_URL_API=http://0.0.0.0:4007
